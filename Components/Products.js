@@ -5,6 +5,7 @@ export default function Products(state, dispatch) {
   console.log('All Products');
   console.log(products);
   //console.log(state.state.products);
+
   return (
     <div className="products">
       {products.map((prod) => {
@@ -15,6 +16,28 @@ export default function Products(state, dispatch) {
               <span>{prod.title}</span>
               <b>$ {prod.price}</b>
             </div>
+            {cart.some((p) => {
+              p.id === prod.id;
+            }) ? (
+              <button
+                className="addtoCart"
+                onClick={() => {
+                  dispatch({
+                    type: 'ADD_TO_CART',
+                    payload: {
+                      id: prod.title,
+                      thumbnail: prod.thumbnail,
+                      qty: 1,
+                      price: prod.price,
+                    },
+                  });
+                }}
+              >
+                REMOVE FROM CART
+              </button>
+            ) : (
+              <button className="addtoCart">ADD TO CART</button>
+            )}
           </div>
         );
       })}

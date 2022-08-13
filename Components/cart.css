@@ -26,3 +26,10 @@
   height: 200px;
   overflow: hidden;
 }
+.addtoCart {
+  padding: 5px;
+  background-color: crimson;
+  border: none;
+  border-radius: 3px;
+  color: white;
+}
