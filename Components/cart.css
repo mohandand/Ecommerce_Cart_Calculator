@@ -15,7 +15,7 @@
 }
 .productlist {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   padding: 10px;
   border: 1px solid gray;
   width: 30%;

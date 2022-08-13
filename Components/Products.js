@@ -11,6 +11,10 @@ export default function Products(state, dispatch) {
         return (
           <div className="productlist" key={prod.id}>
             <img src={prod.thumbnail} alt={prod.title} className="image" />
+            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+              <span>{prod.title}</span>
+              <b>$ {prod.price}</b>
+            </div>
           </div>
         );
       })}
