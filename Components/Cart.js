@@ -4,6 +4,7 @@ import axios from 'axios';
 import { cartReducer } from '../Reducers/cartReducer.js';
 
 export default function Cart() {
+  //state will have all states and dispatch to manipulate that state
   const [state, dispatch] = useReducer(cartReducer, {
     products: [],
     cart: [],
@@ -23,7 +24,7 @@ export default function Cart() {
       payload: data.products,
     });
   };
-
+  console.log(state);
   useEffect(() => {
     getProducts();
   }, []);
