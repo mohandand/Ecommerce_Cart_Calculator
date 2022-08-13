@@ -1,5 +1,5 @@
 import React from 'react';
 
-export default Carti = (state, dispatch) => {
-  return <div></div>;
-};
+export default function Carti(state, dispatch) {
+  return <div className="cart">Cart</div>;
+}

@@ -2,6 +2,8 @@ import React, { useState, useEffect, useReducer } from 'react';
 import './cart.css';
 import axios from 'axios';
 import { cartReducer } from '../Reducers/cartReducer.js';
+import Products from './Products.js';
+import Carti from './Carti.js';
 
 export default function Cart() {
   //state will have all states and dispatch to manipulate that state
@@ -31,7 +33,8 @@ export default function Cart() {
 
   return (
     <div className="app" onClick={getProducts}>
-      Ecommerce Site
+      <Products state={state} dispatch={dispatch} />
+      <Carti state={state} dispatch={dispatch} />
     </div>
   );
 }
