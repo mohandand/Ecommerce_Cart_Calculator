@@ -1,9 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useReducer } from 'react';
 import './cart.css';
 import axios from 'axios';
+import { cartReducer } from '../Reducers/cartReducer.js';
 
 export default function Cart() {
-  const 
+  const [state, dispatch] = useReducer(cartReducer, {
+    products: [],
+    cart: [],
+  });
 
   // function getProducts() {
   //   fetch('https://dummyjson.com/products')
@@ -14,7 +18,10 @@ export default function Cart() {
 
   const getProducts = async () => {
     const { data } = await axios.get('https://dummyjson.com/products');
-    console.log(data);
+    dispatch({
+      type: 'ADD_PRDOUCTS',
+      payload: data.products,
+    });
   };
 
   useEffect(() => {
